@@ -79,8 +79,12 @@ def predict_class(sentence, model):
 
 # Route for main page
 @app.route('/')
-def index():
-    return render_template('index.html')
+def home():
+    css_url = url_for('static', filename='styles.css')
+    js_url = url_for('static', filename='scripts.js')
+    background_url = url_for('static', filename='background.jpg')
+    print(f'CSS URL: {css_url}, JS URL: {js_url}, Background URL: {background_url}')
+    return render_template('index.html', background_url=background_url)
 
 # Route to handle chatbot interactions
 @app.route('/chat', methods=['POST'])
