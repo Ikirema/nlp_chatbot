@@ -50,6 +50,11 @@ function sendMessage() {
 
 // Voice-to-text functionality
 document.getElementById('voice-button').addEventListener('click', () => {
+    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+        alert("Your browser does not support speech recognition. Please use Google Chrome or a similar browser.");
+        return;
+    }
+
     const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
     recognition.lang = 'en-US';
     recognition.interimResults = false;
@@ -61,6 +66,15 @@ document.getElementById('voice-button').addEventListener('click', () => {
 
     recognition.onerror = function(event) {
         console.error('Error:', event.error);
+        if (event.error === 'not-allowed' || event.error === 'denied') {
+            alert("Microphone access was denied. Please allow microphone permissions in your browser settings.");
+        } else {
+            alert("An error occurred while accessing the microphone: " + event.error);
+        }
+    };
+
+    recognition.onspeechend = function() {
+        recognition.stop();
     };
 
     recognition.start();
