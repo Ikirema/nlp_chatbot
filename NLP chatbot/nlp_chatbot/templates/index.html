@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> <!-- For animations -->
     <style>
        body {
-        background: linear-gradient(135deg, rgba(244, 244, 244, 0.5), rgba(224, 224, 224, 0.5)), 
+        background: linear-gradient(135deg, rgba(244, 244, 244, 0.5), rgba(224, 224, 224, 0.5)),
                 url('{{ background_url }}') no-repeat center center fixed;
-        background-size: cover; /* Ensure the image covers the entire area */
+        background-size: cover;
        }
     </style>
 </head>
@@ -20,13 +20,14 @@
             <div id="messages">
                 <!-- Messages will appear here -->
             </div>
-            <!-- Typing indicator -->
             <div id="typing-indicator" style="display: none;">Bot is typing...</div>
             <input type="text" id="user-input" placeholder="Type your message here...">
-            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i> Send</button>
+            <button id="send-button" onclick="sendMessage()"><i class="fas fa-paper-plane"></i> Send</button>
+            <button id="voice-button"><i class="fas fa-microphone"></i> Voice</button>
+            <button id="delete-button"><i class="fas fa-trash"></i> Delete</button>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script> <!-- For icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>

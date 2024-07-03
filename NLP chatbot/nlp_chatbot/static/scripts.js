@@ -1,20 +1,20 @@
 // Show typing indicator
 function showTypingIndicator() {
     const typingIndicator = document.getElementById('typing-indicator');
-    typingIndicator.style.display = 'block'; // Show the typing indicator
+    typingIndicator.style.display = 'block';
 }
 
 // Hide typing indicator
 function hideTypingIndicator() {
     const typingIndicator = document.getElementById('typing-indicator');
-    typingIndicator.style.display = 'none'; // Hide the typing indicator
+    typingIndicator.style.display = 'none';
 }
 
 function sendMessage() {
     const userInput = document.getElementById('user-input').value;
-    if (userInput.trim() === '') return; // Prevent sending empty messages
+    if (userInput.trim() === '') return;
 
-    showTypingIndicator(); // Show typing indicator
+    showTypingIndicator();
 
     fetch('/chat', {
         method: 'POST',
@@ -23,7 +23,7 @@ function sendMessage() {
     })
     .then(response => response.json())
     .then(data => {
-        hideTypingIndicator(); // Hide typing indicator once the response is received
+        hideTypingIndicator();
 
         const messages = document.getElementById('messages');
 
@@ -39,14 +39,38 @@ function sendMessage() {
         botMessage.textContent = data.message;
         messages.appendChild(botMessage);
 
-        document.getElementById('user-input').value = ''; // Clear input field
-        messages.scrollTop = messages.scrollHeight; // Scroll to the bottom
+        document.getElementById('user-input').value = '';
+        messages.scrollTop = messages.scrollHeight;
     })
     .catch(error => {
         console.error('Error:', error);
-        hideTypingIndicator(); // Hide typing indicator in case of an error
+        hideTypingIndicator();
     });
 }
+
+// Voice-to-text functionality
+document.getElementById('voice-button').addEventListener('click', () => {
+    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        document.getElementById('user-input').value = transcript;
+    };
+
+    recognition.onerror = function(event) {
+        console.error('Error:', event.error);
+    };
+
+    recognition.start();
+});
+
+// Delete messages functionality
+document.getElementById('delete-button').addEventListener('click', () => {
+    const messages = document.getElementById('messages');
+    messages.innerHTML = ''; // Clear messages
+});
 
 // Automatically focus on the input field when the page loads
 document.addEventListener("DOMContentLoaded", function() {
