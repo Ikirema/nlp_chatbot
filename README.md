@@ -1,5 +1,4 @@
-# Medical Assistant Chatbot - README
-From Scratch
+# Medical Assistant Chatbot -From Scratch - README
 
 ## Overview
 
@@ -16,10 +15,10 @@ The Medical Assistant Chatbot is an NLP (Natural Language Processing) powered ch
 ## Technology Stack
 
 - **Backend**: Python, Flask
-- **NLP Framework**: spaCy, NLTK, GPT-3 (OpenAI)
+- **NLP Framework**: spaCy, NLTK
 - **Database**: SQLite (for storing user interactions and medical data)
 - **Frontend**: HTML, CSS, JavaScript
-- **Deployment**: Docker, AWS (optional)
+- **Deployment**: Flask
 
 ## Installation
 
@@ -136,7 +135,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any inquiries or issues, please contact [yourname@example.com](mailto:yourname@example.com).
+For any inquiries or issues, please contact [iankirema@gmail.com](mailto:yourname@example.com).
 
 ---
 
