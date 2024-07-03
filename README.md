@@ -1,4 +1,5 @@
 # Medical Assistant Chatbot - README
+From Scratch
 
 ## Overview
 
