@@ -91,3 +91,34 @@ document.addEventListener("DOMContentLoaded", function() {
     const inputField = document.getElementById('user-input');
     inputField.focus();
 });
+document.addEventListener('DOMContentLoaded', (event) => {
+    const messages = document.getElementById('messages');
+    const scrollButton = document.getElementById('scroll-button');
+
+    messages.addEventListener('scroll', () => {
+        if (messages.scrollTop < messages.scrollHeight - messages.clientHeight - 100) {
+            scrollButton.style.display = 'block';
+        } else {
+            scrollButton.style.display = 'none';
+        }
+    });
+
+    scrollButton.addEventListener('click', () => {
+        messages.scrollTop = messages.scrollHeight;
+    });
+
+    function scrollToBottom() {
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    // Optional: Scroll to bottom when a new message is added
+    function addMessage(message) {
+        const messageElement = document.createElement('div');
+        messageElement.textContent = message;
+        messages.appendChild(messageElement);
+        scrollToBottom();
+    }
+
+    // Example usage
+    addMessage('Hello, this is a new message!');
+});
