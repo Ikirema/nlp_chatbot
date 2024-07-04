@@ -119,6 +119,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
         scrollToBottom();
     }
 
-    // Example usage
-    addMessage('Hello, this is a new message!');
 });
