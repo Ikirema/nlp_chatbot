@@ -40,7 +40,7 @@ body {
     color: gray;
 }
 
-#user-input, #send-button, #voice-button, #delete-button {
+#user-input {
     width: 85%;
     padding: 12px;
     margin: 10px;
@@ -50,7 +50,18 @@ body {
     text-align: center;
 }
 
-#send-button, #voice-button, #delete-button {
+#button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#send-button {
+    width: 85%;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 8px;
     background: linear-gradient(135deg, #007BFF, #0056b3);
     color: white;
     border: none;
@@ -58,7 +69,30 @@ body {
     transition: background 0.3s, transform 0.2s;
 }
 
-#send-button:hover, #voice-button:hover, #delete-button:hover {
+#send-button:hover {
+    background: linear-gradient(135deg, #0056b3, #003a80);
+    transform: scale(1.05);
+}
+
+#icon-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 85%;
+}
+
+#voice-button, #delete-button {
+    padding: 12px;
+    margin: 10px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#voice-button:hover, #delete-button:hover {
     background: linear-gradient(135deg, #0056b3, #003a80);
     transform: scale(1.05);
 }
@@ -92,6 +126,10 @@ body {
     #user-input, #send-button, #voice-button, #delete-button {
         width: 90%;
         padding: 15px;
+    }
+
+    #icon-buttons {
+        width: 90%;
     }
 }
 
