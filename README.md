@@ -47,19 +47,14 @@ The Medical Assistant Chatbot is an NLP (Natural Language Processing) powered ch
     pip install -r requirements.txt
     ```
 
-4. **Set Up Environment Variables**
-    Create a `.env` file in the root directory with the following variables:
-    ```env
-    OPENAI_API_KEY=your_openai_api_key
-    FLASK_ENV=development
     ```
 
-5. **Run the Application**
+4. **Run the Application**
     ```bash
     flask run
     ```
 
-6. **Access the Chatbot**
+5. **Access the Chatbot**
     Open your web browser and go to `http://127.0.0.1:5000`.
 
 ### Docker Deployment

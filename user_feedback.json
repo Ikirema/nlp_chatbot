@@ -1,0 +1,27 @@
+[
+    {
+        "input": "hi",
+        "predicted_intent": "greeting",
+        "response": "Greetings! How can I help you with your health concerns today?"
+    },
+    {
+        "input": "what is cancer",
+        "predicted_intent": "cancer_general",
+        "response": "Cancer is a disease where cells grow uncontrollably and spread to other parts of the body. It's caused by changes in the DNA within cells."
+    },
+    {
+        "input": "treatment of cancer",
+        "predicted_intent": "cancer_hospitals",
+        "response": "Some of the top hospitals for cancer treatment include MD Anderson Cancer Center, Mayo Clinic, Cleveland Clinic, and Memorial Sloan Kettering Cancer Center."
+    },
+    {
+        "input": "heart attack",
+        "predicted_intent": "heart_attack",
+        "response": "Avoiding smoking, managing stress, and controlling conditions like high blood pressure and diabetes are essential for preventing future heart attacks."
+    },
+    {
+        "input": "exit",
+        "predicted_intent": "greeting",
+        "response": "Hi! How can I be of assistance to you?"
+    }
+]

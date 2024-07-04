@@ -17,11 +17,11 @@ nltk.download('averaged_perceptron_tagger')
 app = Flask(__name__)
 
 # Load intents and other necessary data
-with open('intents.json', 'r') as file:
+with open('intents (1).json', 'r') as file:
     intents = json.load(file)
 
 # Load saved model and other preprocessing artifacts
-model = load_model('chatbot_model (1).h5')
+model = load_model('chatbot_model.h5')
 
 with open('words.pkl', 'rb') as f:
     words = pickle.load(f)
