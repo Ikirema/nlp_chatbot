@@ -1,4 +1,4 @@
-# Medical Assistant Chatbot -From Scratch - README
+# Medical Assistant Chatbot From Scratch - README
 
 ## Overview
 
@@ -133,7 +133,9 @@ pytest tests/
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contact
+## UI DEMO
+![image](https://github.com/Ikirema/nlp_chatbot/assets/136974351/2e3f4b36-13db-44d7-9117-4cc22d6e96a7)
+
 
 For any inquiries or issues, please contact [iankirema@gmail.com](mailto:yourname@example.com).
 
